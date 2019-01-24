@@ -49,6 +49,12 @@ ax = sns.distplot(tmdb_com_mais_de_10_votos.vote_average)
 ax.set(xlabel="Nota média", ylabel="Densidade")
 ax.set_title("Média de votos em filmes no TMDB 5000 dentre os filmes com 10 ou mais votos")
 
+ax = sns.distplot(tmdb_com_mais_de_10_votos.vote_average,
+                          hist_kws = {'cumulative':True},
+                          kde_kws = {'cumulative':True})
+ax.set(xlabel="Nota média", ylabel="% acumulada de filmes")
+ax.set_title("Média de votos em filmes no TMDB 5000 com 10 ou mais votos")
+
 ax = sns.boxplot(x=tmdb_com_mais_de_10_votos.vote_average)
 ax.set(xlabel="Nota média do filme")
 ax.set_title("Distribuição de nota média dos filmes do TMDB 5000 dentre os filmes com 10 ou mais votos")
@@ -74,6 +80,12 @@ nota_media_dos_filmes_com_pelo_menos_10_votos.head()
 
 ax = sns.distplot(nota_media_dos_filmes_com_pelo_menos_10_votos.values)
 ax.set(xlabel="Nota média", ylabel="Densidade")
+ax.set_title("Média de votos em filmes no Movielens 100k com 10 ou mais votos")
+
+ax = sns.distplot(nota_media_dos_filmes_com_pelo_menos_10_votos.values,
+                          hist_kws = {'cumulative':True},
+                          kde_kws = {'cumulative':True})
+ax.set(xlabel="Nota média", ylabel="% acumulada de filmes")
 ax.set_title("Média de votos em filmes no Movielens 100k com 10 ou mais votos")
 
 ax = sns.boxplot(x=nota_media_dos_filmes_com_pelo_menos_10_votos.values)
